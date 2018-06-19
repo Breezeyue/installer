@@ -40,7 +40,7 @@ router.get('/agreement', function(req, res, next) {
 
 /* GET main page. */
 router.get('/main', function(req, res, next) {
-  res.render('main');
+  res.render('main', { layout: 'main'});
 });
 
 module.exports = router;
