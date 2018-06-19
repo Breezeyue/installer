@@ -1,0 +1,83 @@
+doctype html
+html
+  head
+    title Test Installer - menu
+    meta(charset='utf-8')
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css")
+    script(src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js")
+    script(src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js")
+    script(src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js")
+    style.
+      #mainContainer
+      {
+      border-style: ridge;
+      border-width: 5px;
+      box-shadow: 6px 6px 6px #111111;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #EEEEEE, #777777)
+      }
+  body
+    .container-fluid(style='background: linear-gradient(180deg, #339966, #050505)')
+      .row(style='background-color: black')
+        .col-5(style='background-color: black')
+          .media
+            img.align-self-start.mr-3(src='/images/logo.png')
+        .col-7(style=min-height )
+          //
+      .row(style='min-height: 50px;')
+      .view
+        #mainContainer.container
+          .row.clearfix
+            .col-md-12.column
+              .page-header
+                h1
+                  | 联想超融合 
+                  span LHS H3000
+                hr(style='box-shadow: 1px 0px 1px')  
+          .row.clearfix(style='margin: 10px;')
+            .col-md-2.column
+              button.btn.btn-info(type='button') 最终用户许可协议
+              hr
+              button.btn.btn-info(type='button') 设备部署目标
+              hr
+              button.btn.btn-info(type='button') 选择部署主机
+              hr
+              button.btn.btn-info(type='button') 设置主机信息
+              hr
+              button.btn.btn-info(type='button') 设置集群管理网络
+              hr
+              button.btn.btn-info(type='button') 设置集群存储网络
+              hr
+              button.btn.btn-info(type='button') 设置集群存储网络
+              hr
+              button.btn.btn-info(type='button') 开始部署
+              hr
+              button.btn.btn-info(type='button') 完成页
+              hr
+            .col-md-10.column
+              .page-header
+                h1
+                  | 最终用户许可协议
+                p 仔细阅读并接受以下协议
+                  hr
+              p 请注意，在本软件的安装过程中无论可能会出现任何条款，使用本软件都将受此最终用户许可协议各条款的约束。 
+
+                重要信息，请仔细阅读：您一旦下载、安装或使用本软件，您（自然人或法人）即同意接受本最终用户许可协议（“本协议”）的约束。如果您不同意本协议的条款，请勿下载、安装或使用本软件，您必须删除本软件，或在三十 (30) 天内将未使用的软件退给向其购买软件的供应商，并且要求退还您已为本软件支付的许可费（如果有）。 
+
+                评估许可。如果您为评估目的获得本软件的许可，则您只可在非生产环境下，在许可密钥限定的期限内使用本软件。无论本协议的其他条款规定为何，本软件的评估许可是按“原样”提供的，不附带任何赔偿、支持或保证（不论是明示的还是默示的）。 
+
+              p
+                a.btn(href='#') View details »
+              button.btn.btn-default(type='button') 同意
+          .row.clearfix
+            .col-md-12.column
+              hr(style='box-shadow: 0px 1px')
+              button.btn.btn-default(type='button') 返回
+              button.btn.btn-default(type='button') 下一步
+              button.btn.btn-default(type='button') 取消
+
+      .row
+        .col-12
+              #footer(style='clear:both;text-align:center; color:gold;')
+                    | 版权 © lenovocloud.com

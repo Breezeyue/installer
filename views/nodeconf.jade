@@ -1,0 +1,29 @@
+extends layout
+//- http://www.nooong.com/docs/jade_chinese.htm
+//- https://v3.bootcss.com/css/
+block content
+  <div id="container" style="width:1000px">
+ 
+  <div id="header" style="background-color:red;">
+  <h1 style="margin-bottom:0;color:white">Lenovo LHS H3000</h1></div>
+
+  <div id="menu" style="background-color:#AAFFAA;height:600px;width:140px;float:left;">
+  <b>菜单</b><br>
+  <a href="/">前往根页面</a><br>
+  <a href="/home">前往home页面</a><br>
+  <a href="/vcenterconf">配置vcenter.conf</a><br>
+  <a href="/nodescsv">配置nodes.csv</a></div>
+  
+  <div id="content" style="background-color:#EEEEEE;height:600px;width:860px;float:left;">
+  <h4> 编辑   nodes.conf </h4>
+  <form>
+  b cvm_ova_file: <input type="text" name="cvm_ova_file"><br>
+  b cvm_root_password: <input type="text" name="cvm_root_password"><br>
+  b csv_file: <input type="text" name="csv_file"><br>
+  b govc_file: <input type="text" name="govc_file"><br>
+  b node_scripts_path: <input type="text" name="node_scripts_path"><br>
+
+  <input type="submit" value="提交">
+
+  <input type="button" value="验证">
+  </form></div>

@@ -1,0 +1,83 @@
+doctype html
+html
+  head
+    title Test Installer - menu
+    meta(charset='utf-8')
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="stylesheet", href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css")
+    script(src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js")
+    script(src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js")
+    script(src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js")
+  body
+    .container(style='background: linear-gradient(180deg, #339966, #000000)')
+      //头部标题栏
+      .row(style='background-color: black')
+        .col-5(style='background-color: black')
+          .media
+            img.align-self-start.mr-3(src='/images/logo.png')
+        .col-7(style=min-height )
+          //
+      .row(style='min-height: 50px;')
+      .box.box-element
+        .view
+          .lyrow(style='height: 300px')
+            h1(style='margin: 25px; color:white;font-family:微软雅黑;font-weight:bold;') &nbsp联想超融合Vega存储集群部署向导
+            h3(style='margin: 30px; color:white;font-family:微软雅黑;font-weight:bold;') &nbspH3000 标准版
+      .view
+        .row.clearfix(style='min-height: 300px')
+          .col-xs-12.col-sm-12.col-md-3(style='margin: 30px')
+            .box.box-element
+              .view
+                button.btn.btn-info.btn-lg(data-toggle='modal', data-target='#myModal')(style='min-height:120px; min-width: 260px; box-shadow: 3px 3px 5px #111111;') 
+                  b 集群部署
+                  p(style='color: white;')
+                    | 全新部署超融合Vega存储集群
+          .col-xs-12.col-sm-12.col-md-3(style='margin: 30px')
+            .box.box-element
+              .view
+                button.btn.btn-secondary.btn-lg(data-toggle='modal', data-target='#myModal')(style='min-height:120px; min-width: 260px; box-shadow: 3px 3px 5px #111111;') 
+                  b 集群扩容
+                  p(style='color: white;')
+                    | 扩容现有超融合Vega存储集群
+          .col-xs-12.col-sm-12.col-md-3(style='margin: 30px')
+            .box.box-element
+              .view
+                button.btn.btn-secondary.btn-lg(data-toggle='modal', data-target='#myModal')(style='min-height:120px; min-width: 260px; box-shadow: 3px 3px 5px #111111;')
+                  b 集群拆除
+                  p(style='color: white;')
+                    | 拆除现有超融合Vega存储集群
+      .row
+        .col-12
+              #footer(style='clear:both;text-align:center; color:gold;')
+                    | 版权 © lenovocloud.com
+    // modal框 data-backdrop="static"指定静态背景，点击模态框外部时不会关闭模态框。data-keyboard='false'指禁用Esc键关闭模态框
+    #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true', data-backdrop='static',data-keyboard='false')
+      .modal-dialog.modal-lg(style='min-height: 1000px')
+        .modal-content
+          .modal-header
+            h6#myModalLabel.modal-title
+              | Lenovo LHS H3000
+            button.close(type='button', data-dismiss='modal', aria-hidden='true')
+              | ×
+          .modal-body
+            ul.list-group
+              .row
+                .col-4
+                  li.list-group-item.list-group-item-primary 最终用户许可协议
+                  li.list-group-item.list-group-item-success 设备部署目标
+                  li.list-group-item.list-group-item-secondary 选择部署主机
+                  li.list-group-item.list-group-item-secondary 设置主机信息
+                  li.list-group-item.list-group-item-secondary 设置集群管理网络
+                  li.list-group-item.list-group-item-secondary 设置集群存储网络
+                  li.list-group-item.list-group-item-secondary 开始部署
+                  li.list-group-item.list-group-item-secondary 完成页
+                .col
+                  
+          .modal-footer
+            .progress
+              .progress-bar(role='progressbar', aria-valuenow='60', aria-valuemin='0', aria-valuemax='100', style='width: 30%;')
+                  span.sr-only 30% 完成
+            button.btn.btn-primary(type='button')
+              | 下一步
+            button.btn.btn-default(type='button', data-dismiss='modal')
+              | 取消

@@ -1,0 +1,37 @@
+extends layout
+//- http://www.nooong.com/docs/jade_chinese.htm
+//- https://v3.bootcss.com/css/
+block content
+  #header(style='background-color:black;width:1000px;')
+    h1(style='float:left;color:white;font-family:微软雅黑;font-weight:bold;width:155px;background-color:red') &nbsp Lenovo
+    h1(style='float:left;color:white;font-family:微软雅黑;font-weight:bold;width:845px;background-color:black') &nbsp 联想超融合 LHS H3000
+  #container(style='width:1000px')
+    #menu(style='background-color:#FFD700;height:600px;width:155px;float:left;')
+      b 菜单
+      br
+      | HTML
+      br
+      | CSS
+      br
+      | JavaScript
+    #content(style='background-color:#EEEEEE;height:600px;width:845px;float:left;')
+      | 内容在这里
+      h2 创建模态框（Modal）
+      // 按钮触发模态框
+      button.btn.btn-primary.btn-lg(data-toggle='modal', data-target='#myModal') 开始演示模态框
+      // 模态框（Modal）
+      #myModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true')
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal', aria-hidden='true') ×
+              h4#myModalLabel.modal-title 模态框（Modal）标题
+            .modal-body 在这里添加一些文本
+            .modal-footer
+              button.btn.btn-default(type='button', data-dismiss='modal') 关闭
+              button.btn.btn-primary(type='button') 提交更改
+          // /.modal-content
+        // /.modal
+    #footer(style='background-color:#FFA500;clear:both;text-align:center;')
+      | 版权 © runoob.com
+

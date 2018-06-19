@@ -1,0 +1,58 @@
+extends layout
+//- http://www.nooong.com/docs/jade_chinese.htm
+//- https://v3.bootcss.com/css/
+block content
+  #container(style='width:1000px')
+    #header(style='background-color:red;')
+      h1(style='margin-bottom:0;color:white;font-family:微软雅黑;font-weight:bold') &nbsp Lenovo LHS H3000
+
+  #content(style='background-color:#EEEEEE;height:600px;width:860px;float:left;')
+    // 按钮触发模态框
+    // button.btn.btn-primary.btn-lg(data-toggle='modal', data-target='#modal1') 开始部署
+    // 模态框（Modal）
+    #modal1.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='true', data-backdrop='static', data-keyboard='false')
+      .modal-dialog(style='width:800px')
+        .modal-content(style='height:600px')
+          .mytop(style='height:30px;border-radius:5px 5px 0px 0px; border-bottom:2px solid #A9A9A8')
+            p#myModalLabel(style='line-height:30px;font-family:微软雅黑;font-weight:bold') &nbsp&nbsp&nbsp&nbsp H3000标准版安装
+          .modal-body
+            .leftarea
+              h5.deploytitle.titleactive.firsttitle &nbsp&nbsp&nbsp1、用户许可协议
+              h5.deploytitle  2、配置节点信息
+              h5.deploytitle  3、配置vCenter信息
+              h5.deploytitle  4、配置cvm信息
+              h5.deploytitle  5、配置软件信息
+            .rightarea
+              p.deploytitle.page-header(style='color:#000000') 请阅读以下许可协议，同意后继续
+              form(role='form', style='margin-left:30px')
+                // 单选
+                .form-group
+                  textarea.form-control(name='', id='', rows='15', style='width:530px')
+                    | 联想超融合AIO H3000是一个纯软件实现的企业存储解决方案
+                .checkbox
+                  label
+                    input#LicenseAgreement(type='checkbox')
+                    | 我接受许可协议条款
+          .myfoot(style='height:50px;border-radius:0px 0px 5px 5px; border-top:2px solid #A9ACAF')
+            div(style='line-height:50px;margin-left:450px')
+              button#back1.btn.btn-default.active(type='button', disabled='true') 上一步
+              button#next1.btn.btn-default.active(type='button', style='margin-left:12px', disabled='true', data-toggle='modal', data-target='#modal2') 下一步
+              button.btn.btn-default.active(type='button', style='margin-left:12px', disabled='true') 完&nbsp&nbsp&nbsp&nbsp成
+              button.btn.btn-default.active(type='button', data-dismiss='modal', style='margin-left:12px') 关&nbsp&nbsp&nbsp&nbsp闭
+        // /.modal-content
+      // /.modal
+
+//  #menu(style='background-color:#FFD700;height:600px;width:140px;float:left;')
+//    b 菜单 
+//    br
+//    a(href='/') 根页面
+//    br
+//    a(href='/nodeconf') 配置node.conf
+//    br
+//    a(href='/vcenterconf') 配置vcenter.conf
+//    br
+//    a(href='/nodescsv') 配置nodes.csv
+//    br
+//    a(href='/deploy') deploy
+//    br
+//    a(href='/start') start
