@@ -1,0 +1,108 @@
+doctype html
+html(lang='zh-CN')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Bootstrap 101 Template
+    // Bootstrap
+    link(href='https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='./stylesheets/main.css')
+    // 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用
+    //if lt IE 9
+      script(src='https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js')
+      script(src='https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js')
+    script(src='https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js')
+    script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    script(src='http://malsup.github.io/min/jquery.form.min.js')
+    script(src='./javascripts/main.js')
+  body
+    .container
+      .tab-container.row
+        .tab-list.col-md-3
+          .title1.active 123
+          .title2 123
+          .title3 123
+          .title4 123
+          .title5 123
+          .title6 123
+          .title7 123
+          .title8 123
+        .tab-content.col-md-9
+          .title1
+            .header
+              | title
+            .content
+              form#myForm(action='comment.php', method='post')
+                | Name: 
+                input(type='text', name='name')
+                .tips.hidden 需要传入数据
+                |                         Comment: 
+                textarea(name='comment')
+                input(type='submit', value='Submit Comment')
+            .footer.row.btn-box
+              button.btn.btn-default.btn-next 下一步
+              button.btn.btn-default.btn-cancel 取消
+          .title2.hidden
+            .header
+              | title
+            .content
+              | 1
+            .footer.row.btn-box
+              button.btn.btn-default.btn-prev 上一步
+              button.btn.btn-default.btn-next 下一步
+              button.btn.btn-default.btn-cancel 取消
+          .title3.hidden
+            .header
+              | title
+            .content
+              | 1
+            .footer.row.btn-box
+              button.btn.btn-default.btn-prev 上一步
+              button.btn.btn-default.btn-next 下一步
+              button.btn.btn-default.btn-cancel 取消
+          .title4.hidden
+            .header
+              | title
+            .content
+              | 1
+            .footer.row.btn-box
+              button.btn.btn-default.btn-prev 上一步
+              button.btn.btn-default.btn-next 下一步
+              button.btn.btn-default.btn-cancel 取消
+          .title5.hidden
+            .header
+              | title
+            .content
+              | 1
+            .footer.row.btn-box
+              button.btn.btn-default.btn-prev 上一步
+              button.btn.btn-default.btn-next 下一步
+              button.btn.btn-default.btn-cancel 取消
+          .title6.hidden
+            .header
+              | title
+            .content
+              | 1
+            .footer.row.btn-box
+              button.btn.btn-default.btn-prev 上一步
+              button.btn.btn-default.btn-next 下一步
+              button.btn.btn-default.btn-cancel 取消
+          .title7.hidden
+            .header
+              | title
+            .content
+              | 1
+            .footer.row.btn-box
+              button.btn.btn-default.btn-prev 上一步
+              button.btn.btn-default.btn-next 下一步
+              button.btn.btn-default.btn-cancel 取消
+          .title8.hidden
+            .header
+              | title
+            .content
+              | 1
+            .footer.row.btn-box
+              button.btn.btn-default.btn-prev 上一步
+              button.btn.btn-default.btn-cancel 取消
+

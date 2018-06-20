@@ -17,77 +17,112 @@ html(lang='zh-CN')
     script(src='http://malsup.github.io/min/jquery.form.min.js')
     script(src='./javascripts/main.js')
   body
-    .container
-      .tab-container.row
-        .tab-list.col-md-3
-          .title1.active 123
-          .title2 123
-          .title3 123
-          .title4 123
-          .title5 123
-          .title6 123
-        .tab-content.col-md-9
-          .title1
-            .header
-              | title
-            .content
-              form#myForm(action='comment.php', method='post')
-                | Name: 
-                input(type='text', name='name')
-                .tips.hidden 需要传入数据
-                |                         Comment: 
-                textarea(name='comment')
-                input(type='submit', value='Submit Comment')
-            .footer.row.btn-box
-              button.btn.btn-default.btn-next 下一步
-              button.btn.btn-default.btn-cancel 取消
-          .title2.hidden
-            .header
-              | title
-            .content
-              | 1
-            .footer.row.btn-box
-              button.btn.btn-default.btn-prev 上一步
-              button.btn.btn-default.btn-next 下一步
-              button.btn.btn-default.btn-cancel 取消
-          .title3.hidden
-            .header
-              | title
-            .content
-              | 1
-            .footer.row.btn-box
-              button.btn.btn-default.btn-prev 上一步
-              button.btn.btn-default.btn-next 下一步
-              button.btn.btn-default.btn-cancel 取消
-          .title4.hidden
-            .header
-              | title
-            .content
-              | 1
-            .footer.row.btn-box
-              button.btn.btn-default.btn-prev 上一步
-              button.btn.btn-default.btn-next 下一步
-              button.btn.btn-default.btn-cancel 取消
-          .title5.hidden
-            .header
-              | title
-            .content
-              | 1
-            .footer.row.btn-box
-              button.btn.btn-default.btn-prev 上一步
-              button.btn.btn-default.btn-next 下一步
-              button.btn.btn-default.btn-cancel 取消
-          .title6.hidden
-            .header
-              | title
-            .content
-              | 1
-            .footer.row.btn-box
-              button.btn.btn-default.btn-prev 上一步
-              button.btn.btn-default.btn-cancel 取消
-      // <div class="btn-box row">
-      // <button class="btn btn-default">按钮1</button>
-      // <button class="btn btn-default">按钮2</button>
-      // <button class="btn btn-default">按钮3</button>
-      // </div>
-
+    .container-fluid(style='background: linear-gradient(180deg, #339966, #050505)')
+      .row(style='background-color: black')
+        .col-5(style='background-color: black')
+          .media
+            img.align-self-start.mr-3(src='/images/logo.png')
+        .col-7(style=min-height )
+          //
+      .row(style='min-height: 50px;')
+      .view
+        .mainContainer.container
+          .row.clearfix
+            .col-md-12.column
+              .page-header
+                h1
+                  | 联想超融合 
+                  span LHS H3000
+                hr(style='box-shadow: 1px 1px 1px')  
+          .tab-container.row
+            .tab-list.col-md-3
+              .title1.active 最终用户许可协议
+              .title2 设置主机信息
+              .title3 设备部署目标
+              .title4 设置主机信息
+              .title5 设置集群管理网络
+              .title6 设置集群存储网络
+              .tabListIcon.title7 开始部署
+              .tabListIcon.title8 结束页
+            .tab-content.col-md-9
+              .title1
+                .header
+                  | title
+                .content
+                  form#myForm(action='comment.php', method='post')
+                    | Name: 
+                    input(type='text', name='name')
+                    .tips.hidden 需要传入数据
+                    |                         Comment: 
+                    textarea(name='comment')
+                    input(type='submit', value='Submit Comment')
+                .footer.row.btn-box
+                  button.btn.btn-default.btn-next 下一步
+                  button.btn.btn-default.btn-cancel 取消
+              .title2.hidden
+                .header
+                  | title
+                .content
+                  | 1
+                .footer.row.btn-box
+                  button.btn.btn-default.btn-prev 上一步
+                  button.btn.btn-default.btn-next 下一步
+                  button.btn.btn-default.btn-cancel 取消
+              .title3.hidden
+                .header
+                  | title
+                .content
+                  | 1
+                .footer.row.btn-box
+                  button.btn.btn-default.btn-prev 上一步
+                  button.btn.btn-default.btn-next 下一步
+                  button.btn.btn-default.btn-cancel 取消
+              .title4.hidden
+                .header
+                  | title
+                .content
+                  | 1
+                .footer.row.btn-box
+                  button.btn.btn-default.btn-prev 上一步
+                  button.btn.btn-default.btn-next 下一步
+                  button.btn.btn-default.btn-cancel 取消
+              .title5.hidden
+                .header
+                  | title
+                .content
+                  | 1
+                .footer.row.btn-box
+                  button.btn.btn-default.btn-prev 上一步
+                  button.btn.btn-default.btn-next 下一步
+                  button.btn.btn-default.btn-cancel 取消
+              .title6.hidden
+                .header
+                  | title
+                .content
+                  | 1
+                .footer.row.btn-box
+                  button.btn.btn-default.btn-prev 上一步
+                  button.btn.btn-default.btn-next 下一步
+                  button.btn.btn-default.btn-cancel 取消
+              .title7.hidden
+                .header
+                  | title
+                .content
+                  | 1
+                .footer.row.btn-box
+                  button.btn.btn-default.btn-prev 上一步
+                  button.btn.btn-default.btn-next 下一步
+                  button.btn.btn-default.btn-cancel 取消
+              .title8.hidden
+                .header
+                  | title
+                .content
+                  | 1
+                .footer.row.btn-box
+                  button.btn.btn-default.btn-prev 上一步
+                  button.btn.btn-default.btn-cancel 取消
+      .row
+        .col-12
+              #footer(style='clear:both;text-align:center; color:gold;min-height: 50px;')
+                    p  
+                      | Copyright © lenovocloud.com 2018-2019
