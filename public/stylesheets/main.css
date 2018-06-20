@@ -56,3 +56,9 @@
     color:#333333;
     text-align:left;
 }
+.textFeild
+{
+    flex: 1;
+    margin: 3px;
+    border: 1px solid black;
+}
