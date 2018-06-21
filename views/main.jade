@@ -70,14 +70,14 @@ html(lang='zh-CN')
                   h3 设备部署目标
                   p.help-block 配置vCenter并指定目标数据中心以及集群
                 .content
-                  form
-                    .form-group
+                  form(style=('padding: 10px;'))
+                    .form-group.has-success
                       label(for='exampleInputEmail1') vCenter IP 地址
                       input#exampleInputEmail1.form-control(type='vcip', placeholder='vCenter IP')
-                    .form-group
+                    .form-group.has-warning
                       label(for='exampleInputUsername1') vCenter User Name
                       input#exampleInputUsername1.form-control(type='name', placeholder='Username')
-                    .form-group
+                    .form-group.has-error
                       label(for='exampleInputPassword1') vCenter Password
                       input#exampleInputPassword1.form-control(type='passwd', placeholder='Password')
                     hr
