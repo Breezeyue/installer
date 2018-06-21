@@ -36,22 +36,22 @@ html(lang='zh-CN')
                 hr(style='box-shadow: 1px 1px 1px')  
           .tab-container.row
             .tab-list.col-md-3
-              .title1.active 最终用户许可协议
-              .title2 设置主机信息
-              .title3 设备部署目标
-              .title4 设置主机信息
-              .title5 设置集群管理网络
-              .title6 设置集群存储网络
+              .tabListIcon.title1.active 最终用户许可协议
+              .tabListIcon.title2 设备部署目标
+              .tabListIcon.title3 选择部署主机
+              .tabListIcon.title4 设置主机信息
+              .tabListIcon.title5 设置集群管理网络
+              .tabListIcon.title6 设置集群存储网络
               .tabListIcon.title7 开始部署
               .tabListIcon.title8 结束页
             .tab-content.col-md-9
               .title1
                 .header
                   h3 最终用户许可协议
-                  p 仔细阅读并接受以下协议
-                .content
-                  hr
-                  .textField.col-md-12.pre-scrollable
+                  p.help-block 仔细阅读并接受以下协议
+                .content.row
+                  .textField.pre-scrollable
+                    h1 最终用户许可协议
                     p 请注意，在本软件的安装过程中无论可能会出现任何条款，使用本软件都将受此最终用户许可协议各条款的约束。重要信息，请仔细阅读：您一旦下载、安装或使用本软件，您（自然人或法人）即同意接受本最终用户许可协议（“本协议”）的约束。如果您不同意本协议的条款，请勿下载、安装或使用本软件，您必须删除本软件，或在三十 (30) 天内将未使用的软件退给向其购买软件的供应商，并且要求退还您已为本软件支付的许可费（如果有）。 
                     p 请注意，在本软件的安装过程中无论可能会出现任何条款，使用本软件都将受此最终用户许可协议各条款的约束。重要信息，请仔细阅读：您一旦下载、安装或使用本软件，您（自然人或法人）即同意接受本最终用户许可协议（“本协议”）的约束。如果您不同意本协议的条款，请勿下载、安装或使用本软件，您必须删除本软件，或在三十 (30) 天内将未使用的软件退给向其购买软件的供应商，并且要求退还您已为本软件支付的许可费（如果有）。 
                     p 请注意，在本软件的安装过程中无论可能会出现任何条款，使用本软件都将受此最终用户许可协议各条款的约束。重要信息，请仔细阅读：您一旦下载、安装或使用本软件，您（自然人或法人）即同意接受本最终用户许可协议（“本协议”）的约束。如果您不同意本协议的条款，请勿下载、安装或使用本软件，您必须删除本软件，或在三十 (30) 天内将未使用的软件退给向其购买软件的供应商，并且要求退还您已为本软件支付的许可费（如果有）。 
@@ -67,15 +67,27 @@ html(lang='zh-CN')
                   button.btn.btn-default.btn-cancel 取消
               .title2.hidden
                 .header
-                  | title
+                  h3 设备部署目标
+                  p.help-block 配置vCenter并指定目标数据中心以及集群
                 .content
-                  form#myForm(action='comment.php', method='post')
-                    | Name: 
-                    input(type='text', name='name')
-                    .tips.hidden 需要传入数据
-                    |                         Comment: 
-                    textarea(name='comment')
-                    input(type='submit', value='Submit Comment')
+                  form
+                    .form-group
+                      label(for='exampleInputEmail1') vCenter IP 地址
+                      input#exampleInputEmail1.form-control(type='vcip', placeholder='vCenter IP')
+                    .form-group
+                      label(for='exampleInputUsername1') vCenter User Name
+                      input#exampleInputUsername1.form-control(type='name', placeholder='Username')
+                    .form-group
+                      label(for='exampleInputPassword1') vCenter Password
+                      input#exampleInputPassword1.form-control(type='passwd', placeholder='Password')
+                    hr
+                    .form-group
+                      p.help-block Example block-level help text here.
+                    .checkbox
+                      label
+                        input(type='checkbox')
+                        |  Check me out
+                    button.btn.btn-default(type='submit') Submit
                 .footer.row.btn-box
                   button.btn.btn-default.btn-prev 上一步
                   button.btn.btn-default.btn-next 下一步
