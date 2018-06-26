@@ -72,3 +72,35 @@
     border-style: ridge;
     margin: 10px;
 }
+.table
+{
+    flex: 1;
+    background: wheat;
+    border: 3px solid orange;
+    border-style: ridge;
+    margin: 10px;
+    padding: 10px;
+}
+.ESXishow
+{
+    max-height: 200px;
+}
+.btn-prev
+{
+    margin: 10px;
+    float: right;
+}
+.btn-next
+{
+    margin: 10px;
+    float: right;
+}
+.btn-cancel
+{
+    margin: 10px;
+    float: right;
+}
+form
+{
+    padding: 10px;
+}

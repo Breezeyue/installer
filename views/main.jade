@@ -16,6 +16,7 @@ html(lang='zh-CN')
     script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
     script(src='http://malsup.github.io/min/jquery.form.min.js')
     script(src='./javascripts/main.js')
+    script(src='./javascripts/test.js')
   body
     .container-fluid(style='background: linear-gradient(180deg, #339966, #050505)')
       .row(style='background-color: black')
@@ -37,8 +38,8 @@ html(lang='zh-CN')
           .tab-container.row
             .tab-list.col-md-3
               .tabListIcon.title1.active 最终用户许可协议
-              .tabListIcon.title2 设备部署目标
-              .tabListIcon.title3 选择部署主机
+              .tabListIcon.title2 集群部署目标
+              .tabListIcon.title3 选择部署目标
               .tabListIcon.title4 设置主机信息
               .tabListIcon.title5 设置集群管理网络
               .tabListIcon.title6 设置集群存储网络
@@ -49,6 +50,7 @@ html(lang='zh-CN')
                 .header
                   h3 最终用户许可协议
                   p.help-block 仔细阅读并接受以下协议
+                  hr
                 .content.row
                   .textField.pre-scrollable
                     h1 最终用户许可协议
@@ -59,92 +61,166 @@ html(lang='zh-CN')
                     p 请注意，在本软件的安装过程中无论可能会出现任何条款，使用本软件都将受此最终用户许可协议各条款的约束。重要信息，请仔细阅读：您一旦下载、安装或使用本软件，您（自然人或法人）即同意接受本最终用户许可协议（“本协议”）的约束。如果您不同意本协议的条款，请勿下载、安装或使用本软件，您必须删除本软件，或在三十 (30) 天内将未使用的软件退给向其购买软件的供应商，并且要求退还您已为本软件支付的许可费（如果有）。 
                     p 请注意，在本软件的安装过程中无论可能会出现任何条款，使用本软件都将受此最终用户许可协议各条款的约束。重要信息，请仔细阅读：您一旦下载、安装或使用本软件，您（自然人或法人）即同意接受本最终用户许可协议（“本协议”）的约束。如果您不同意本协议的条款，请勿下载、安装或使用本软件，您必须删除本软件，或在三十 (30) 天内将未使用的软件退给向其购买软件的供应商，并且要求退还您已为本软件支付的许可费（如果有）。 
                     p 请注意，在本软件的安装过程中无论可能会出现任何条款，使用本软件都将受此最终用户许可协议各条款的约束。重要信息，请仔细阅读：您一旦下载、安装或使用本软件，您（自然人或法人）即同意接受本最终用户许可协议（“本协议”）的约束。如果您不同意本协议的条款，请勿下载、安装或使用本软件，您必须删除本软件，或在三十 (30) 天内将未使用的软件退给向其购买软件的供应商，并且要求退还您已为本软件支付的许可费（如果有）。 
-                  .form-check
-                    input#checkAgreement.form-check-input(type='checkbox')
-                    label.form-check-label(for='checkAgreement') 我已阅读并同意此协议
+                  form
+                    .form-check
+                      input#checkAgreement.form-check-input(type='checkbox')
+                      label.form-check-label(for='checkAgreement') 我已阅读并同意此协议
                 .footer.row.btn-box
-                  button.btn.btn-default.btn-next 下一步
                   button.btn.btn-default.btn-cancel 取消
+                  button.btn.btn-default.btn-next 下一步
               .title2.hidden
                 .header
-                  h3 设备部署目标
-                  p.help-block 配置vCenter并指定目标数据中心以及集群
+                  h3 指定部署目标vCenter
+                  p.help-block 指定vCenter并指定目标数据中心以及集群
                 .content
-                  form(style=('padding: 10px;'))
-                    .form-group.has-success
-                      label(for='exampleInputEmail1') vCenter IP 地址
-                      input#exampleInputEmail1.form-control(type='vcip', placeholder='vCenter IP')
+                  form
+                    #vcenterIp.form-group.has-success.has-feedback
+                      label(for='VCIP') vCenter IP 地址
+                      input#VCIP.form-control(type='ip', placeholder='vCenter IP', aria-describedby='VCIPstatus', onchange="checkIp()")
+                      span.glyphicon.glyphicon-ok.form-control-feedback(aria-hidden='true')
+                      span#VCIPstatus.sr-only (success)
                     .form-group.has-warning
                       label(for='exampleInputUsername1') vCenter User Name
                       input#exampleInputUsername1.form-control(type='name', placeholder='Username')
-                    .form-group.has-error
-                      label(for='exampleInputPassword1') vCenter Password
-                      input#exampleInputPassword1.form-control(type='passwd', placeholder='Password')
+                    #vcpasswd.form-group
+                      label(for='vcPassword') vCenter Password
+                      input#vcPassword.form-control(type='passwd', placeholder='Password', )
                     hr
-                    .form-group
-                      p.help-block Example block-level help text here.
-                    .checkbox
-                      label
-                        input(type='checkbox')
-                        |  Check me out
-                    button.btn.btn-default(type='submit') Submit
+                    button.btn.btn-default(type='submit') 验证
                 .footer.row.btn-box
-                  button.btn.btn-default.btn-prev 上一步
-                  button.btn.btn-default.btn-next 下一步
                   button.btn.btn-default.btn-cancel 取消
+                  button.btn.btn-default.btn-next 下一步
+                  button.btn.btn-default.btn-prev 上一步
               .title3.hidden
                 .header
-                  | title
+                  h3 选择部署目标
+                  p.help-block 指定部署目标数据中心和主机
+                  hr
                 .content
-                  | 1
+                  form
+                    .form-group
+                      label(for='Datacenter') 选择数据中心
+                      select.form-control
+                        option CIS
+                        option DataCenter
+                      label(for='Cluster') 选择集群
+                      select.form-control
+                        option cluster1
+                        option cluster2
+                    hr
+                    .ESXishow.pre-scrollable
+                      table.table
+                        thead
+                          tr
+                            th 
+                            th EXSi
+                            th Manufacture
+                            th Core
+                            th Memory
+                        tbody
+                          tr
+                            td 
+                              input#checkAgreement.form-check-input(type='checkbox')
+                            td 001
+                            td Rammohan 
+                            td Reddy
+                            td A+
+                          tr
+                            td 
+                              input#checkAgreement.form-check-input(type='checkbox')
+                            td 002
+                            td Smita
+                            td Pallod
+                            td A
+                          tr
+                            td 
+                              input#checkAgreement.form-check-input(type='checkbox')
+                            td 003
+                            td Rabindranath
+                            td Sen
+                            td A+
                 .footer.row.btn-box
-                  button.btn.btn-default.btn-prev 上一步
-                  button.btn.btn-default.btn-next 下一步
                   button.btn.btn-default.btn-cancel 取消
+                  button.btn.btn-default.btn-next 下一步
+                  button.btn.btn-default.btn-prev 上一步
               .title4.hidden
                 .header
-                  | title
+                  h3 设置主机信息
+                  p.help-block 指定部署目标数据中心和主机
                 .content
-                  | 1
+                  form
+                    .ESXishow.pre-scrollable
+                      table.table
+                        thead
+                          tr
+                            th 
+                            th EXSi
+                            th Username
+                            th password
+                            th datastore
                 .footer.row.btn-box
-                  button.btn.btn-default.btn-prev 上一步
-                  button.btn.btn-default.btn-next 下一步
                   button.btn.btn-default.btn-cancel 取消
+                  button.btn.btn-default.btn-next 下一步
+                  button.btn.btn-default.btn-prev 上一步
               .title5.hidden
                 .header
-                  | title
+                  h3 选择部署目标
+                  p.help-block 指定部署目标数据中心和主机
                 .content
-                  | 1
+                  form
+                    .ESXishow.pre-scrollable
+                      table.table
+                        thead
+                          tr
+                            th 
+                            th EXSi
+                            th Username
+                            th password
+                            th datastore
                 .footer.row.btn-box
-                  button.btn.btn-default.btn-prev 上一步
-                  button.btn.btn-default.btn-next 下一步
                   button.btn.btn-default.btn-cancel 取消
+                  button.btn.btn-default.btn-next 下一步
+                  button.btn.btn-default.btn-prev 上一步
               .title6.hidden
                 .header
+                  h3 选择部署目标
+                  p.help-block 指定部署目标数据中心和主机
                   | title
                 .content
-                  | 1
+                  form
+                    .ESXishow.pre-scrollable
+                      table.table
+                        thead
+                          tr
+                            th 
+                            th EXSi
+                            th Username
+                            th password
+                            th datastore
                 .footer.row.btn-box
-                  button.btn.btn-default.btn-prev 上一步
-                  button.btn.btn-default.btn-next 下一步
                   button.btn.btn-default.btn-cancel 取消
+                  button.btn.btn-default.btn-next 下一步
+                  button.btn.btn-default.btn-prev 上一步
               .title7.hidden
                 .header
-                  | title
+                  h3 开始部署
+                  p.help-block 部署集群
                 .content
-                  | 1
+                  .progress(style='margin: 20px;')
+                    .progress-bar.progress-bar-striped.progress-bar-animated(role='progressbar', aria-valuenow='75', aria-valuemin='0', aria-valuemax='100', style='width: 75%')
+
                 .footer.row.btn-box
-                  button.btn.btn-default.btn-prev 上一步
-                  button.btn.btn-default.btn-next 下一步
                   button.btn.btn-default.btn-cancel 取消
+                  button.btn.btn-default.btn-next 下一步
+                  button.btn.btn-default.btn-prev 上一步
               .title8.hidden
                 .header
                   | title
                 .content
-                  | 1
+                  | 8
                 .footer.row.btn-box
-                  button.btn.btn-default.btn-prev 上一步
                   button.btn.btn-default.btn-cancel 取消
+                  button.btn.btn-default.btn-prev 上一步
       .row
         .col-12
               #footer(style='clear:both;text-align:center; color:gold;min-height: 50px;')
