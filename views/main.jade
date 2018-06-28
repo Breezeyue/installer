@@ -17,6 +17,7 @@ html(lang='zh-CN')
     script(src='http://malsup.github.io/min/jquery.form.min.js')
     script(src='./javascripts/main.js')
     script(src='./javascripts/test.js')
+    script(src='./javascripts/vcenterCheck.js')
   body
     .container-fluid(style='background: linear-gradient(180deg, #339966, #050505)')
       .row(style='background-color: black')
@@ -50,7 +51,6 @@ html(lang='zh-CN')
                 .header
                   h3 最终用户许可协议
                   p.help-block 仔细阅读并接受以下协议
-                  hr
                 .content.row
                   .textField.pre-scrollable
                     h1 最终用户许可协议
@@ -73,30 +73,31 @@ html(lang='zh-CN')
                   h3 指定部署目标vCenter
                   p.help-block 指定vCenter并指定目标数据中心以及集群
                 .content
+                  //做vCenter的表单,完成表单的验证并提交
                   form
                     #vcenterIp.form-group.has-success.has-feedback
-                      label(for='VCIP') vCenter IP 地址
-                      input#VCIP.form-control(type='ip', placeholder='vCenter IP', aria-describedby='VCIPstatus', onchange="checkIp()")
+                      label(for='vcIp') vCenter IP 地址
+                      input#vcIp.form-control(type='ip', placeholder='vCenter IP', aria-describedby='VCIPstatus', onchange="checkIp()")
                       span.glyphicon.glyphicon-ok.form-control-feedback(aria-hidden='true')
                       span#VCIPstatus.sr-only (success)
                     .form-group.has-warning
-                      label(for='exampleInputUsername1') vCenter User Name
-                      input#exampleInputUsername1.form-control(type='name', placeholder='Username')
+                      label(for='vcUsername') vCenter User Name
+                      input#vcUsername.form-control(type='name', placeholder='Username')
                     #vcpasswd.form-group
                       label(for='vcPassword') vCenter Password
                       input#vcPassword.form-control(type='passwd', placeholder='Password', )
                     hr
-                    button.btn.btn-default(type='submit') 验证
+                    button#vcCheckButton.btn.btn-default(type='submit') 验证
                 .footer.row.btn-box
                   button.btn.btn-default.btn-cancel 取消
-                  button.btn.btn-default.btn-next 下一步
+                  button#vcButton.btn.btn-default.btn-next 下一步
                   button.btn.btn-default.btn-prev 上一步
               .title3.hidden
                 .header
                   h3 选择部署目标
                   p.help-block 指定部署目标数据中心和主机
-                  hr
                 .content
+                  //把api返回的数据放进下拉选框,选完并提交,再放进集群选框,选完并提交,根据Api返回再生成ESXi选单
                   form
                     .form-group
                       label(for='Datacenter') 选择数据中心
@@ -148,6 +149,7 @@ html(lang='zh-CN')
                   h3 设置主机信息
                   p.help-block 指定部署目标数据中心和主机
                 .content
+                  //根据已选择的主机生成主机信息表单
                   form
                     .ESXishow.pre-scrollable
                       table.table
@@ -164,9 +166,10 @@ html(lang='zh-CN')
                   button.btn.btn-default.btn-prev 上一步
               .title5.hidden
                 .header
-                  h3 选择部署目标
+                  h3 设置集群管理网络
                   p.help-block 指定部署目标数据中心和主机
                 .content
+                  //根据主机的信息表单生成CVM配置表单
                   form
                     .ESXishow.pre-scrollable
                       table.table
@@ -183,9 +186,8 @@ html(lang='zh-CN')
                   button.btn.btn-default.btn-prev 上一步
               .title6.hidden
                 .header
-                  h3 选择部署目标
+                  h3 设置集群存储网络
                   p.help-block 指定部署目标数据中心和主机
-                  | title
                 .content
                   form
                     .ESXishow.pre-scrollable
@@ -215,7 +217,8 @@ html(lang='zh-CN')
                   button.btn.btn-default.btn-prev 上一步
               .title8.hidden
                 .header
-                  | title
+                  h3 结束
+                  p.help-block 完成部署
                 .content
                   | 8
                 .footer.row.btn-box

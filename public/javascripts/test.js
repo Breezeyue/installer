@@ -18,3 +18,9 @@ function addEsxiRow(row)
     var p1 = document.createElement("p");
     p1.className
 }
+
+$(document).ready(function () {
+      var options = {
+                target: '#ESXi1'
+                      }
+})
