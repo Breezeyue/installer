@@ -77,17 +77,17 @@ html(lang='zh-CN')
                   form
                     #vcenterIp.form-group.has-success.has-feedback
                       label(for='vcIp') vCenter IP 地址
-                      input#vcIp.form-control(type='ip', placeholder='vCenter IP', aria-describedby='VCIPstatus', onchange="checkIp()")
+                      input#vcIp.form-control(type='ip', placeholder='vCenter IP', aria-describedby='VCIPstatus')
                       span.glyphicon.glyphicon-ok.form-control-feedback(aria-hidden='true')
                       span#VCIPstatus.sr-only (success)
                     .form-group.has-warning
-                      label(for='vcUsername') vCenter User Name
+                      label(for='vcUsername') vCenter 用户名
                       input#vcUsername.form-control(type='name', placeholder='Username')
                     #vcpasswd.form-group
-                      label(for='vcPassword') vCenter Password
+                      label(for='vcPassword') vCenter 密码
                       input#vcPassword.form-control(type='passwd', placeholder='Password', )
                     hr
-                    button#vcCheckButton.btn.btn-default(type='submit') 验证
+                    button#vcCheckButton.btn.btn-default(type='button') kaishi
                 .footer.row.btn-box
                   button.btn.btn-default.btn-cancel 取消
                   button#vcButton.btn.btn-default.btn-next 下一步
