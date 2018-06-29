@@ -16,7 +16,7 @@ html(lang='zh-CN')
     script(src='https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js')
     script(src='http://malsup.github.io/min/jquery.form.min.js')
     script(src='./javascripts/main.js')
-    script(src='./javascripts/test.js')
+    script(src='./javascripts/api.js')
     script(src='./javascripts/vcenterCheck.js')
   body
     .container-fluid(style='background: linear-gradient(180deg, #339966, #050505)')
@@ -100,10 +100,8 @@ html(lang='zh-CN')
                   //把api返回的数据放进下拉选框,选完并提交,再放进集群选框,选完并提交,根据Api返回再生成ESXi选单
                   form
                     .form-group
-                      label(for='Datacenter') 选择数据中心
-                      select.form-control
-                        option CIS
-                        option DataCenter
+                      label(for='dataCenterSelector') 选择数据中心
+                      select#dataCenterSelector.form-control(type='Datacenter', placeholder='Datacenter')
                       label(for='Cluster') 选择集群
                       select.form-control
                         option cluster1
